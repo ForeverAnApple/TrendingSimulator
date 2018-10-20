@@ -44,7 +44,7 @@ class Bot:
     def slow_send_keys(self, field, text):
         for c in text:
             field.send_keys(c)
-            self.sleep_range(0.1, 0.2)
+            self.sleep_range(0.03, 0.35)
 
     def login(self, username, password):
         # Navigate to the login page
@@ -130,16 +130,16 @@ def main():
     selected_trend = bot.trending_elements_names[selected_trend_index]
     selected_trend_text = selected_trend.text
 
-    bot.trending_dictionary[selected_trend].click()
-    bot.sleep_range(3, 7)
+    if cache.cache_age(selected_trend_text) > 1*60*60: # 1 hour
+        bot.trending_dictionary[selected_trend].click()
+        bot.sleep_range(3, 7)
 
-    bot.scrape_tweets_on_page(30000)
+        bot.scrape_tweets_on_page(30000)
 
-    cache.add_tweets(bot.tweets, selected_trend_text)
+        cache.add_tweets(bot.tweets, selected_trend_text)
 
-    for tweet in bot.tweets:
-        print(tweet.text)
-        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    for i, tweet in enumerate(cache.get_tweets(selected_trend_text)):
+        print("%d. <<%s>>" % (i + 1, tweet))
 
     #text_model = markovify.Text(string)
 

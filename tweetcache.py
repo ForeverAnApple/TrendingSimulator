@@ -33,18 +33,40 @@ class TweetCache:
             tag TEXT NOT NULL)''')
         self.db.commit()
 
-    # returns a tuple of (tweet_text, access_datetime)
+    # returns cache age in seconds
+    def cache_age(self, topic):
+        cursor = self.db.cursor()
+        cursor.execute('''SELECT MAX(timestamp_added)
+            FROM tweet
+            JOIN topic ON tweet.topic_id = topic.topic_id
+            WHERE topic_name = ?''', (topic,))
+        latest_timestamp = cursor.fetchone()[0]
+        if latest_timestamp is None:
+            latest_timestamp = float('-inf')
+        return int(time.time()) - latest_timestamp
+
     def get_tweets(self, topic):
         cursor = self.db.cursor()
-        cursor.execute('SELECT body, timestamp_added FROM tweet t WHERE topic = ?', (topic,))
-
+        cursor.execute('''SELECT body
+            FROM tweet 
+            JOIN topic ON tweet.topic_id = topic.topic_id
+            WHERE topic_name = ?''', (topic,))
         for row in cursor:
-            yield row[0], datetime.fromtimestamp(row[1])
+            yield row[0]
+
+    # No-op if topic already exists
+    def __add_topic(self, topic):
+        cursor = self.db.cursor()
+        cursor.execute('SELECT COUNT(*) FROM topic WHERE topic_name = ?', (topic,))
+        if cursor.fetchone()[0] == 0:
+            cursor.execute('INSERT INTO topic (topic_name) VALUES (?)', (topic,))
+            self.db.commit()
 
     def add_tweets(self, tweets, topic):
+        self.__add_topic(topic)
         cursor = self.db.cursor()
         for tweet in tweets:
-            cursor.execute('INSERT INTO tweet (body, topic, timestamp_added) VALUES (?, ?, ?)',
-                           (tweet.text, topic, int(time.time())))
-            print((tweet.text, topic))
+            cursor.execute('''INSERT INTO tweet (body, topic_id, timestamp_added) SELECT ?, topic_id, ?
+                FROM topic where topic_name = ?''',
+                           (tweet.text, int(time.time()), topic))
         self.db.commit()
