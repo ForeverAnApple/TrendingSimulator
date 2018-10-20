@@ -5,3 +5,4 @@ geckodriver.log
 __pycache__/
 *.key
 key.json
+.idea/workspace.xml
