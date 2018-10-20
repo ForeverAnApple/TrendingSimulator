@@ -131,10 +131,11 @@ class Bot:
 
 def main():
     cache = TweetCache()
-    vision = VisionApi()
+    # vision = VisionApi()
 
     bot = Bot()
-    bot.login('TrendySimulator', '7mDZJ7PEfbdie77')
+    user, passw = open('twitter_login.key', 'r').readline().split(' ')
+    bot.login(user, passw)
 
     bot.select_trending_topics()
 
