@@ -1,7 +1,7 @@
 import markovify
 from selenium import webdriver
 from random import randint
-from time import sleep
+import time
 
 class Markov:
     def build_tweet(self):
@@ -25,13 +25,14 @@ class Bot:
     def __init__(self):
         self.browser = webdriver.Firefox()
         self.trending_dictionary = {}
+        self.trending_elements_names = []
 
     def navigate(self, url):
         self.browser.get(url)
 
     @staticmethod
     def sleep_range(min, max):
-        sleep(randint(min, max))
+        time.sleep(randint(min, max))
 
     def login(self, username, password):
         # Navigate to the login page
@@ -69,16 +70,35 @@ class Bot:
         self.browser.implicitly_wait(5)
         # Navigate to twitter home page
         self.navigate('https://twitter.com/')
-        # Select trending hashtags parents
+        # Select trending hashtags parent
         trending_elements = self.browser.find_elements_by_class_name('pretty-link.js-nav.js-tooltip.u-linkComplex')
-        trending_elements_names = self.browser.find_elements_by_class_name('u-linkComplex-target.trend-name')
+        self.trending_elements_names = self.browser.find_elements_by_class_name('u-linkComplex-target.trend-name')
         for x in range(len(trending_elements)):
-            self.trending_dictionary[trending_elements_names[x]] = trending_elements[x]
+            self.trending_dictionary[self.trending_elements_names[x]] = trending_elements[x]
 
-        for x in trending_elements_names:
-            print(x.text)
+        # For now go ahead and click on the first option
+        self.browser.implicitly_wait(10)
+        self.trending_dictionary[self.trending_elements_names[3]].click()
+        self.sleep_range(3, 7)
 
-        self.trending_dictionary.get(trending_elements_names[0]).click()
+    @staticmethod
+    def current_time_millis():
+        return int(round(time.time() * 1000))
+
+    def scrape_tweets_on_page(self, time_to_scroll):
+        milli_start = self.current_time_millis()
+        milli_current = self.current_time_millis()
+        while milli_current - milli_start < time_to_scroll:
+            self.browser.execute_script('window.scrollTo(0, document.body.scrollHeight);')
+            self.sleep_range(1, 3)
+            milli_current = self.current_time_millis()
+
+        # We're just going to assume we're on a page containing tweets
+        tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
+        print(len(tweets))
+        for tweet in tweets:
+            print(tweet.text)
+            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
 
 def main():
@@ -86,6 +106,7 @@ def main():
     bot.login('TrendySimulator', '7mDZJ7PEfbdie77')
     bot.sleep_range(1, 3)
     bot.select_trending_topics()
+    bot.scrape_tweets_on_page(30000)
 
     #text_model = markovify.Text(string)
 
