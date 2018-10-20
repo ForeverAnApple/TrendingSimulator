@@ -28,6 +28,7 @@ class Bot:
         self.trending_dictionary = {}
         self.trending_elements_names = []
         self.tweets = []
+        self.image_urls = []
 
     def navigate(self, url):
         self.browser.get(url)
@@ -97,8 +98,16 @@ class Bot:
             self.sleep_range(1, 3)
             milli_current = self.current_time_millis()
 
-        # We're just going to assume we're on a page containing tweets
-        self.tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
+        # Scrape Tweets
+        tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
+        # Scrape Image Urls
+        image_elements = self.browser.find_elements_by_class_name('AdaptiveMedia-photoContainer.js-adaptive-photo')
+        for image in image_elements:
+            self.image_urls.append(image.get_attribute('data-image-url'))
+
+        print('Num Tweets: ' + str(len(tweets)))
+        print('Num Images: ' + str(len(self.image_urls)))
+
 
 def main():
     cache = TweetCache()
