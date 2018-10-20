@@ -24,6 +24,7 @@ class Markov:
 class Bot:
     def __init__(self):
         self.browser = webdriver.Firefox()
+        self.trending_dictionary = {}
 
     def navigate(self, url):
         self.browser.get(url)
@@ -61,11 +62,30 @@ class Bot:
         tweet_button = self.browser.find_element_by_class_name('tweet-action.EdgeButton.EdgeButton--primary.js-tweet-btn')
         tweet_button.click()
 
+    def select_trending_topics(self):
+        # Clear the trending list
+        self.trending_dictionary = {}
+        # Implicitly wait for trending side bar
+        self.browser.implicitly_wait(5)
+        # Navigate to twitter home page
+        self.navigate('https://twitter.com/')
+        # Select trending hashtags parents
+        trending_elements = self.browser.find_elements_by_class_name('pretty-link.js-nav.js-tooltip.u-linkComplex')
+        trending_elements_names = self.browser.find_elements_by_class_name('u-linkComplex-target.trend-name')
+        for x in range(len(trending_elements)):
+            self.trending_dictionary[trending_elements_names[x]] = trending_elements[x]
+
+        for x in trending_elements_names:
+            print(x.text)
+
+        self.trending_dictionary.get(trending_elements_names[0]).click()
+
 
 def main():
     bot = Bot()
     bot.login('TrendySimulator', '7mDZJ7PEfbdie77')
     bot.sleep_range(1, 3)
+    bot.select_trending_topics()
 
 
 
