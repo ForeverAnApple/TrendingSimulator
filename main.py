@@ -1,5 +1,7 @@
 import markovify
-
+from selenium import webdriver
+from random import randint
+from time import sleep
 
 class Markov:
     def build_tweet(self):
@@ -19,12 +21,39 @@ class Markov:
         print('finished initializing')
 
 
-def main():
-    print('Welcome to TrendyTwitter Bot!')
-    print('Attempting sherlock holmes tweets..')
+class Bot:
+    def __init__(self):
+        self.browser = webdriver.Firefox()
 
-    mark = Markov('resources/rawText.txt')
-    mark.build_tweet()
+    def navigate(self, url):
+        self.browser.get(url)
+
+    @staticmethod
+    def sleep_range(min, max):
+        sleep(randint(min, max))
+
+    def login(self, username, password):
+        # Navigate to the login page
+        self.navigate('https://twitter.com/login')
+        # Sleep for random amount of time
+        self.sleep_range(1, 3)
+        # Click the username field
+        username_field = self.browser.find_element_by_class_name('js-username-field')
+        username_field.send_keys(username)
+        self.sleep_range(1, 3)
+        # Click the password field
+        password_field = self.browser.find_element_by_class_name('js-password-field')
+        password_field.send_keys(password)
+        self.sleep_range(1, 3)
+        # Click the Log in button
+        login_button = self.browser.find_element_by_class_name('submit.EdgeButton.EdgeButton--primary.EdgeButtom--medium')
+        login_button.click()
+        print('Done')
+
+
+def main():
+    bot = Bot()
+    bot.login('TrendySimulator', '7mDZJ7PEfbdie77')
 
 
 if __name__ == '__main__':

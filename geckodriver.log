@@ -1,0 +1,216 @@
+1540013147090	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.zQpZjtLMQ6k8"
+1540013150879	Marionette	INFO	Listening on port 58963
+1540013150920	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540013151504	Marionette	DEBUG	[6442450945] Frame script loaded
+1540013151510	Marionette	DEBUG	[6442450945] Frame script registered
+[Parent 474832, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 474832, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 474832, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 425284, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 42521540013190458	Marionette	INFO	Stopped listening on port 58963
+[GPU 4169
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1540013196276	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.THcwfHPKHX6I"
+1540013199207	Marionette	INFO	Listening on port 59003
+1540013199498	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540013199551	Marionette	DEBUG	[6442450945] Frame script loaded
+1540013199556	Marionette	DEBUG	[6442450945] Frame script registered
+1540013221429	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.zIl3pjK1pVa0"
+1540013224571	Marionette	INFO	Listening on port 59044
+1540013224652	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540013224706	Marionette	DEBUG	[6442450945] Frame script loaded
+1540013224716	Marionette	DEBUG	[6442450945] Frame script registered
+1540013224772	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540013225654	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540013225850	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.google.com/?gws_rd=ssl
+1540013227082	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.google.com/?gws_rd=ssl
+[Parent 475048, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1540013286821	Marionette	INFO	Stopped listening on port 59044
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1540013375908	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.E2pwi80kRUXL"
+1540013379240	Marionette	INFO	Listening on port 59110
+1540013379727	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540013379769	Marionette	DEBUG	[6442450945] Frame script loaded
+1540013379771	Marionette	DEBUG	[6442450945] Frame script registered
+1540013379797	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540013380424	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540013381078	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540013382680	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+[Parent 453304, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 474536, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 474536, Chrome_Chil[Parent 453304, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 473376, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 41540013394051	Marionette	INFO	Stopped listening on port 59110
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1540016056715	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.5J93fV5z0fu8"
+1540016059473	Marionette	INFO	Listening on port 59530
+1540016059937	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540016059977	Marionette	DEBUG	[6442450945] Frame script loaded
+1540016059990	Marionette	DEBUG	[6442450945] Frame script registered
+1540016060012	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540016060950	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540016062104	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016063712	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016065726	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016066289	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016066292	Marionette	DEBUG	[6442450945] Received DOM event unload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016066880	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540016069251	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+1540016135911	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.EN5VS40p4BRN"
+1540016138310	Marionette	INFO	Listening on port 59587
+1540016138629	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540016138687	Marionette	DEBUG	[6442450945] Frame script loaded
+1540016138705	Marionette	DEBUG	[6442450945] Frame script registered
+1540016138731	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540016139476	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540016140248	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016141580	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016159953	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.CiC4HAuJftRL"
+1540016162325	Marionette	INFO	Listening on port 59633
+1540016162676	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540016162732	Marionette	DEBUG	[6442450945] Frame script loaded
+1540016162734	Marionette	DEBUG	[6442450945] Frame script registered
+1540016162749	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540016163409	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540016164203	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016165684	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016168695	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016169365	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016169366	Marionette	DEBUG	[6442450945] Received DOM event unload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016170115	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540016172901	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)1540016321744	Marionette	INFO	Listening on port 59748
+1540016322204	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540016322265	Marionette	DEBUG	[6442450945] Frame script loaded
+1540016322267	Marionette	DEBUG	[6442450945] Frame script registered
+1540016322289	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540016323443	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540016323977	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016325322	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016326331	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016327072	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016327073	Marionette	DEBUG	[6442450945] Received DOM event unload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016328522	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540016330868	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+[Child 486648, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 486648, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 486020, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 486796, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 486[Parent 486020, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1540016343298	Marionette	INFO	Stopped listening on port 59748
+[GPU 486472, Chro
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1540016494270	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.sFfOJ3AvBWeb"
+1540016496786	Marionette	INFO	Listening on port 59827
+1540016497027	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540016497079	Marionette	DEBUG	[6442450945] Frame script loaded
+1540016497083	Marionette	DEBUG	[6442450945] Frame script registered
+1540016497109	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540016498031	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540016498754	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016499906	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016504922	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016505523	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016505524	Marionette	DEBUG	[6442450945] Received DOM event unload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016507612	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540016510606	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+[Child 484276, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 484276, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_[Parent 484204, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 464344, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 464344, Chrome_Chil[Parent 484204, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1540016528032	Marionette	INFO	Stopped listening on port 59827
+[GPU 485632, Chrom
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1540016542171	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.V3WHihB67bDz"
+1540016545543	Marionette	INFO	Listening on port 59880
+1540016546062	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540016546111	Marionette	DEBUG	[6442450945] Frame script loaded
+1540016546113	Marionette	DEBUG	[6442450945] Frame script registered
+1540016546134	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540016548127	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540016550075	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016551745	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016553760	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016554514	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016554515	Marionette	DEBUG	[6442450945] Received DOM event unload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016555731	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540016558712	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+[Parent 487544, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 485620, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 485620, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1540016579838	Marionette	INFO	Stopped listening on port 59880
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1540016610537	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.JmOtmob2CsW9"
+1540016613305	Marionette	INFO	Listening on port 59953
+1540016613757	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540016613792	Marionette	DEBUG	[6442450945] Frame script loaded
+1540016620485	Marionette	DEBUG	[6442450945] Frame script registered
+1540016620520	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540016621212	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540016621968	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016624733	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016629748	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016630725	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016630727	Marionette	DEBUG	[6442450945] Received DOM event unload for https://www.google.com/search?q=what+is+my+user+agent&ie=utf-8&oe=utf-8&client=firefox-b-1-ab
+1540016632188	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540016635033	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+1540016643196	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/login
+1540016643896	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/login
+1540016643896	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/login
+1540016644245	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450950
+1540016644245	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450951
+1540016644246	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450952
+1540016644246	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450953
+1540016644246	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450954
+1540016644246	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450955
+1540016644265	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540016644449	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+[Parent 485020, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 485020, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 474168, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 474168, Chrome_ChildThr[Parent 485020, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 487964, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 487964, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_cha1540016690364	Marionette	INFO	Stopped listening on port 59953
+[GPU 465
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1540016865688	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.ez80BBkn2LXL"
+1540016869484	Marionette	INFO	Listening on port 60048
+1540016869525	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540016869976	Marionette	DEBUG	[6442450945] Frame script loaded
+1540016869986	Marionette	DEBUG	[6442450945] Frame script registered
+1540016870043	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540016871025	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540016871026	Marionette	DEBUG	[6442450945] Received DOM event unload for about:blank
+1540016872249	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540016876668	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+1540016880893	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/login
+1540016881686	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/login
+1540016881688	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/login
+1540016882370	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1540016882371	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450950
+1540016882372	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450951
+1540016882373	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450952
+1540016882374	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450953
+1540016882374	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450954
+1540016882557	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540016886202	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+[Parent 489144, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 489144, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 488880, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/s[Parent 489144, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 488092, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 481540016945477	Marionette	INFO	Stopped listening on port 60048
+[GPU 488
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
