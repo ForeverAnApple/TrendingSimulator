@@ -155,6 +155,7 @@ def main():
         bot.scrape_tweets_on_page(60*1000)
 
         cache.add_tweets(bot.formatted_tweets, selected_trend_text)
+        cache.add_images(bot.image_urls, selected_trend_text)
 
     # Grab tweets from cache and prep for markov ingestion
     all_text = ''
