@@ -214,3 +214,277 @@ IPDL protocol error: Handler returned error code!
 [GPU 488
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1540017523777	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.IWdsQklazzfZ"
+1540017526519	Marionette	INFO	Listening on port 60154
+1540017527025	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540017527060	Marionette	DEBUG	[6442450945] Frame script loaded
+1540017527061	Marionette	DEBUG	[6442450945] Frame script registered
+1540017527078	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540017527792	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540017528612	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540017531749	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+1540017537902	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/login
+1540017538417	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/login
+1540017538426	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/login
+1540017539254	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1540017539255	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450950
+1540017539255	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450951
+1540017539255	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450952
+1540017539256	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450953
+1540017539256	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450954
+1540017539341	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540017551052	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540017691511	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.r2n7fanqQVZA"
+1540017693949	Marionette	INFO	Listening on port 60226
+1540017694229	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540017694364	Marionette	DEBUG	[6442450945] Frame script loaded
+1540017694372	Marionette	DEBUG	[6442450945] Frame script registered
+1540017694412	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540017694908	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540017696503	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540017700441	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+1540017705579	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/login
+1540017706263	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/login
+1540017706267	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/login
+1540017706959	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1540017706960	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450950
+1540017706961	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450951
+1540017706962	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450952
+1540017706963	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450953
+1540017706963	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450954
+1540017707179	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540017711713	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540017713722	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/
+1540017714127	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/
+1540017714144	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/
+1540017714549	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/
+1540017714554	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540017714621	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540017714628	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450982
+1540017714629	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450962
+1540017714629	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450963
+1540017714631	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450964
+1540017714631	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450968
+1540017714632	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450969
+1540017714637	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450972
+1540017714639	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450973
+1540017714641	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450974
+1540017714643	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450975
+1540017714643	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450976
+1540017714721	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/
+1540017715711	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540017721711	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PImageBridge::Msg_Update Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PImageBridge::Msg_Update Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+[Parent 492720, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PImageBridge::Msg_Update Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PImageBridge::Msg_Update Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PImageBridge::Msg_Update Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PImageBridge::Msg_Update Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PImageBridge::Msg_Update Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PImageBridge::Msg_Update Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+[Parent 492720, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 490868, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 490868, Chro[Parent 492720, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 490936, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 491540017734388	Marionette	INFO	Stopped listening on port 60226
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1540017739543	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.lt6X7OBri3Ss"
+1540017741872	Marionette	INFO	Listening on port 60289
+1540017742256	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540017742293	Marionette	DEBUG	[6442450945] Frame script loaded
+1540017745743	Marionette	DEBUG	[6442450945] Frame script registered
+1540017745812	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540017746797	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540017747489	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540017749618	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+1540017755766	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/login
+1540017756482	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/login
+1540017756486	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/login
+1540017756902	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1540017756902	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450950
+1540017756903	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450951
+1540017756903	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450952
+1540017756903	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450953
+1540017756903	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450954
+1540017757298	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540017768770	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540017771781	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/
+1540017771913	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/
+1540017771944	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/
+1540017772338	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/
+1540017772344	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540017772408	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540017772416	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450962
+1540017772416	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450963
+1540017772417	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450964
+1540017772418	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450968
+1540017772419	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450969
+1540017772419	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450972
+1540017772420	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450973
+1540017772421	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450974
+1540017772421	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450975
+1540017772422	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450976
+1540017772562	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/
+1540017773495	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540017773686	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+[Parent 491112, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 490932, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 49[Parent 491112, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 493472, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 493472, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1540017844262	Marionette	INFO	Stopped listening on port 60289
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1540017864875	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.otSoX4xQyRQr"
+1540017867451	Marionette	INFO	Listening on port 60368
+1540017867597	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540017867666	Marionette	DEBUG	[6442450945] Frame script loaded
+1540017867679	Marionette	DEBUG	[6442450945] Frame script registered
+1540017867702	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540017868400	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540017870779	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540017873962	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+1540017880101	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/login
+1540017880579	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/login
+1540017880583	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/login
+1540017881632	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1540017881632	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450950
+1540017881633	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450951
+1540017881633	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450952
+1540017881633	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450953
+1540017881634	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450954
+1540017881798	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540017882027	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540017884155	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/
+1540017884415	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/
+1540017884430	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/
+1540017884616	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/
+1540017884623	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540017884708	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540017884714	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450984
+1540017884715	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450982
+1540017884715	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450962
+1540017884716	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450963
+1540017884716	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450964
+1540017884716	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450968
+1540017884716	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450969
+1540017884717	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450972
+1540017884717	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450973
+1540017884717	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450974
+1540017884717	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450975
+1540017884718	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450976
+1540017884845	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/
+1540017885667	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540017885877	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540018051842	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\s519653\\AppData\\Local\\Temp\\rust_mozprofile.rNfLbzHFNwZN"
+1540018055464	Marionette	INFO	Listening on port 60506
+1540018055775	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540018056135	Marionette	DEBUG	[6442450945] Frame script loaded
+1540018056138	Marionette	DEBUG	[6442450945] Frame script registered
+1540018056174	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1540018056812	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1540018056813	Marionette	DEBUG	[6442450945] Received DOM event unload for about:blank
+1540018062092	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/login
+1540018072211	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/login
+1540018078389	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/login
+1540018079525	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/login
+1540018079529	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/login
+1540018079979	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1540018079980	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450950
+1540018079980	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450951
+1540018079980	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450952
+1540018079981	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450953
+1540018079981	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450954
+1540018080373	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540018094271	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540018096280	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/
+1540018096473	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://twitter.com/
+1540018096480	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/
+1540018096671	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://twitter.com/
+1540018096672	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540018096743	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540018096753	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450962
+1540018096754	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450963
+1540018096754	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450964
+1540018096755	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450965
+1540018096755	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450966
+1540018096756	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450967
+1540018096756	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450968
+1540018096756	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450969
+1540018096756	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450970
+1540018096757	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450971
+1540018096873	Marionette	DEBUG	[6442450945] Received DOM event unload for https://twitter.com/
+1540018098027	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://twitter.com/
+1540018104858	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://twitter.com/
+1540018110751	Marionette	DEBUG	[6442450945] Canceled page load listener because no navigation has been detected
+[Child 494828, MediaPlayback #2] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #2] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #3] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #4] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #3] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #4] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #1] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #4] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #2] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #4] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #3] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #4] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #3] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #4] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #2] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #4] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #2] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #1] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #4] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #2] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #4] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #2] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #2] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #1] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #2] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #4] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429
+[Child 494828, MediaPlayback #3] WARNING: Decoder=1f8a237b100 Decode error: NS_ERROR_DOM_MEDIA_FATAL_ERR (0x806e0005) - class RefPtr<class mozilla::MozPromise<class RefPtr<class mozilla::MediaTrackDemuxer::SamplesHolder>,class mozilla::MediaResult,1> > __cdecl mozilla::MediaSourceTrackDemuxer::DoGetSamples(int): manager is detached.: file z:/build/build/src/dom/media/MediaDecoderStateMachine.cpp, line 3429

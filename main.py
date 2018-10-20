@@ -50,10 +50,23 @@ class Bot:
         login_button.click()
         print('Done')
 
+    def send_tweet(self, tweet_to_send):
+        # Navigate to twitter home page
+        self.navigate('https://twitter.com/')
+        # Type into the tweet field
+        tweet_field = self.browser.find_element_by_id('tweet-box-home-timeline')
+        tweet_field.send_keys(tweet_to_send)
+        self.sleep_range(3, 5)
+        # Click the tweet button
+        tweet_button = self.browser.find_element_by_class_name('tweet-action.EdgeButton.EdgeButton--primary.js-tweet-btn')
+        tweet_button.click()
+
 
 def main():
     bot = Bot()
     bot.login('TrendySimulator', '7mDZJ7PEfbdie77')
+    bot.sleep_range(1, 3)
+
 
 
 if __name__ == '__main__':
