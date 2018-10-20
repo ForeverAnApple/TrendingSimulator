@@ -36,6 +36,10 @@ class Bot:
     def sleep_range(min, max):
         time.sleep(randint(min, max))
 
+    @staticmethod
+    def click_on_element(element_to_click):
+        element_to_click.click()
+
     def login(self, username, password):
         # Navigate to the login page
         self.navigate('https://twitter.com/login')
@@ -105,19 +109,21 @@ def main():
     bot.select_trending_topics()
 
     print("Current trends on twitter:")
-    for name, i in enumerate(bot.trending_elements_names):
-        print("  %d. %s " % (i, name))
+    for i, name in enumerate(bot.trending_elements_names):
+        print("  %d. %s " % (i + 1, name.text))
 
-    selected_trend_index = input("Select a trend [1 thru %d]: " % (len(bot.trending_elements_names)))
+    selected_trend_index = int(input("Select a trend [1 thru %d]: " % (len(bot.trending_elements_names)))) - 1
     selected_trend = bot.trending_elements_names[selected_trend_index]
+    selected_trend_text = selected_trend.text
 
     bot.trending_dictionary[selected_trend].click()
     bot.sleep_range(3, 7)
 
     bot.scrape_tweets_on_page(30000)
 
+    cache.add_tweets(bot.tweets, selected_trend_text)
+
     for tweet in bot.tweets:
-        cache.add_tweet(tweet.text, selected_trend)
         print(tweet.text)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 

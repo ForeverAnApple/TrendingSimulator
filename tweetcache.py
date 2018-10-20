@@ -30,8 +30,9 @@ class TweetCache:
         for row in cursor:
             yield row[0], datetime.fromtimestamp(row[1])
 
-    def add_tweet(self, body, topic, timestamp_added=int(time.time())):
+    def add_tweets(self, tweets, topic, timestamp_added=int(time.time())):
         cursor = self.db.cursor()
-        cursor.execute('INSERT INTO tweet (body, topic, timestamp_added) VALUES (?, ?, ?)',
-                       (body, topic, timestamp_added))
+        for tweet in tweets:
+            cursor.execute('INSERT INTO tweet (body, topic, timestamp_added) VALUES (?, ?, ?)',
+                           (tweet.text, topic, timestamp_added))
         self.db.commit()

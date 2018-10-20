@@ -2,3 +2,4 @@
 /venv/
 /var/
 geckodriver.log
+__pycache__/
