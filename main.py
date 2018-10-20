@@ -104,13 +104,13 @@ class Bot:
             milli_current = self.current_time_millis()
 
         # Scrape Tweets
-        tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
+        self.tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
         # Scrape Image Urls
         image_elements = self.browser.find_elements_by_class_name('AdaptiveMedia-photoContainer.js-adaptive-photo')
         for image in image_elements:
             self.image_urls.append(image.get_attribute('data-image-url'))
 
-        print('Num Tweets: ' + str(len(tweets)))
+        print('Num Tweets: ' + str(len(self.tweets)))
         print('Num Images: ' + str(len(self.image_urls)))
 
 
