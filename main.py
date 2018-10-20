@@ -1,6 +1,6 @@
 import markovify
 from selenium import webdriver
-from random import randint
+import random
 import time
 from tweetcache import TweetCache
 
@@ -35,11 +35,16 @@ class Bot:
 
     @staticmethod
     def sleep_range(min, max):
-        time.sleep(randint(min, max))
+        time.sleep(random.uniform(min, max))
 
     @staticmethod
     def click_on_element(element_to_click):
         element_to_click.click()
+
+    def slow_send_keys(self, field, text):
+        for c in text:
+            field.send_keys(c)
+            self.sleep_range(0.1, 0.2)
 
     def login(self, username, password):
         # Navigate to the login page
@@ -48,11 +53,11 @@ class Bot:
         self.sleep_range(1, 3)
         # Click the username field
         username_field = self.browser.find_element_by_class_name('js-username-field')
-        username_field.send_keys(username)
+        self.slow_send_keys(username_field, username)
         self.sleep_range(1, 3)
         # Click the password field
         password_field = self.browser.find_element_by_class_name('js-password-field')
-        password_field.send_keys(password)
+        self.slow_send_keys(password_field, password)
         self.sleep_range(1, 3)
         # Click the Log in button
         login_button = self.browser.find_element_by_class_name('submit.EdgeButton.EdgeButton--primary.EdgeButtom--medium')
