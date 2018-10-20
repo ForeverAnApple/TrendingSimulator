@@ -6,13 +6,16 @@ This was created during a 36 hour time period at the Hack K-State hackathon.
 
 ### How it works
 
-Through the [Tweepy API](https://github.com/tweepy/tweepy), TrendingSimulator will fetch the "Top Trending" from any 
-defined region. It will take these trends, analyze and parse the tweets using [markovify](https://github.com/jsvine/markovify)
+Through clever web-scraping, TrendingSimulator will fetch the "Top Trending" from any 
+defined region. It will take these trends, analyze and parse the related tweets using [markovify](https://github.com/jsvine/markovify)
 (the same as Subreddit Simulator), and create 140 character tweets with that information. 
 
+### Planned features:
 
 
 ### Requisites:
 1. Python 3.7
 1. [markovify](https://github.com/jsvine/markovify)
-1. [Tweepy](https://github.com/tweepy/tweepy)
+1. 
+
+
