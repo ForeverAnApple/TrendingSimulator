@@ -8,10 +8,13 @@ class VisionApi():
         # Instantiates a client
         # [START vision_python_migration_client]
 
-        api_token = 'AIzaSyB_qqDMXqKi1-mXtXj-zwtCVqb2TG2eAtk'
+        api_f = open('cloud-vision.key', 'r')
+        api_token = api_f.read()
+        print("token: " + api_token)
         self.img_url = img_url
         self.request = {}
         self.DISCOVERY_URL = 'https://vision.googleapis.com/v1/images:annotate?key=' + api_token
+        print("url: " + self.DISCOVERY_URL)
 
     def getLabels(self):
         self.request = {
@@ -37,7 +40,7 @@ class VisionApi():
         print(response.status_code, response.reason)
         jres = response.json()
         labels = [annotations['description'] for annotations in jres['responses'][0]['labelAnnotations']]
-        print("Descriptions for " + self.img_url + ": " + labels)
+        print("Descriptions for " + self.img_url + ":", labels)
         # labels = response.label_annotations
         # print('Labels for ' + self.img_url + ':')
         # for label in labels:
