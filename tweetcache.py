@@ -68,5 +68,5 @@ class TweetCache:
         for tweet in tweets:
             cursor.execute('''INSERT INTO tweet (body, topic_id, timestamp_added) SELECT ?, topic_id, ?
                 FROM topic where topic_name = ?''',
-                           (tweet.text, int(time.time()), topic))
+                           (tweet, int(time.time()), topic))
         self.db.commit()

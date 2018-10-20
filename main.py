@@ -26,6 +26,7 @@ class Bot:
         self.trending_dictionary = {}
         self.trending_elements_names = []
         self.tweets = []
+        self.formatted_tweets = []
         self.image_urls = []
 
     def navigate(self, url):
@@ -106,7 +107,7 @@ class Bot:
         self.tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
         # Remove \n, \r, and \t from the tweets.
         for i in range(len(self.tweets)):
-            self.tweets[i] = regex.sub('', self.tweets[i])
+            self.formatted_tweets.append(regex.sub('', self.tweets[i].text))
 
         # Scrape Image Urls
         image_elements = self.browser.find_elements_by_class_name('AdaptiveMedia-photoContainer.js-adaptive-photo')
@@ -133,13 +134,13 @@ def main():
     selected_trend = bot.trending_elements_names[selected_trend_index]
     selected_trend_text = selected_trend.text
 
-    if cache.cache_age(selected_trend_text) > 1*60*60: # 1 hour
+    if cache.cache_age(selected_trend_text) > 5*60*60:  # 5 hours
         bot.trending_dictionary[selected_trend].click()
         bot.sleep_range(3, 7)
 
-        bot.scrape_tweets_on_page(30000)
+        bot.scrape_tweets_on_page(60*1000)
 
-        cache.add_tweets(bot.tweets, selected_trend_text)
+        cache.add_tweets(bot.formatted_tweets, selected_trend_text)
 
     all_text = ''
     for tweet in cache.get_tweets(selected_trend_text):
@@ -149,8 +150,9 @@ def main():
             all_text = all_text + tweet
 
     tweet_generator = Markov(all_text)
-    generated_tweet = tweet_generator.build_tweet()
-    print(generated_tweet)
+    for i in range(5):
+        generated_tweet = tweet_generator.build_tweet()
+        print(generated_tweet)
 
 
 if __name__ == '__main__':
