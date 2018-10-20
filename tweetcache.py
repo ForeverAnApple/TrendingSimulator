@@ -1,10 +1,17 @@
 import sqlite3
 import time
+import os, errno
 from datetime import datetime
 
 
 class TweetCache:
-    def __init__(self, cache_db="TweetCache.db"):
+    def __init__(self, cache_db="var/TweetCache.db"):
+        try:
+            os.mkdir("var")
+        except OSError as ex:
+            if ex.errno != errno.EEXIST:
+                raise
+
         self.db = sqlite3.connect(cache_db)
 
         cursor = self.db.cursor()
