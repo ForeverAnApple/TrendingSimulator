@@ -3,6 +3,8 @@ from selenium import webdriver
 import random
 import time
 from tweetcache import TweetCache
+from cloudvision import VisionApi
+
 
 class Markov:
     def build_tweet(self):
@@ -116,6 +118,8 @@ class Bot:
 
 def main():
     cache = TweetCache()
+
+    #vision = VisionApi()
 
     bot = Bot()
     bot.login('TrendySimulator', '7mDZJ7PEfbdie77')
