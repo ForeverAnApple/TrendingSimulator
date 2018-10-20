@@ -9,7 +9,7 @@ from cloudvision import VisionApi
 
 class Markov:
     def build_tweet(self):
-        print('Building tweet....')
+        # print('Building tweet....')
         text_model = markovify.Text(self.text)
 
         tweet = text_model.make_short_sentence(140)
@@ -68,9 +68,17 @@ class Bot:
     def send_tweet(self, tweet_to_send):
         # Navigate to twitter home page
         self.navigate('https://twitter.com/')
-        # Type into the tweet field
+        self.browser.implicitly_wait(5)
+        # Select the field to make it expand
         tweet_field = self.browser.find_element_by_id('tweet-box-home-timeline')
-        tweet_field.send_keys(tweet_to_send)
+        tweet_field.click()
+        self.browser.implicitly_wait(5)
+        # select the field to type into it
+        tweet_field = self.browser.find_element_by_id('tweet-box-home-timeline')
+        # tweet_field.click()
+        self.sleep_range(3, 5)
+        self.slow_send_keys(tweet_field, tweet_to_send)
+        tweet_field.click()
         self.sleep_range(3, 5)
         # Click the tweet button
         tweet_button = self.browser.find_element_by_class_name('tweet-action.EdgeButton.EdgeButton--primary.js-tweet-btn')
@@ -130,14 +138,16 @@ def main():
     bot.sleep_range(1, 3)
     bot.select_trending_topics()
 
+    # Get list of current trends and ask the user which one they want to use
     print("Current trends on twitter:")
     for i, name in enumerate(bot.trending_elements_names):
-        print("  %d. %s " % (i + 1, name.text))
+        print("  %d. %s" % (i + 1, name.text))
 
     selected_trend_index = int(input("Select a trend [1 thru %d]: " % (len(bot.trending_elements_names)))) - 1
     selected_trend = bot.trending_elements_names[selected_trend_index]
     selected_trend_text = selected_trend.text
 
+    # Load in new tweets if the cache misses
     if cache.cache_age(selected_trend_text) > 5*60*60:  # 5 hours
         bot.trending_dictionary[selected_trend].click()
         bot.sleep_range(3, 7)
@@ -146,17 +156,29 @@ def main():
 
         cache.add_tweets(bot.formatted_tweets, selected_trend_text)
 
+    # Grab tweets from cache and prep for markov ingestion
     all_text = ''
+    tweet_count = 0
     for tweet in cache.get_tweets(selected_trend_text):
+        tweet_count += 1
         if not tweet.endswith('.'):
-            all_text = all_text + tweet + '.'
+            all_text = all_text + tweet + '. '
         else:
-            all_text = all_text + tweet
+            all_text = all_text + tweet + ' '
+    print("Loaded %d tweets" % tweet_count)
 
-    tweet_generator = Markov(all_text)
-    for i in range(5):
-        generated_tweet = tweet_generator.build_tweet()
-        print(generated_tweet)
+    # Generate new tweets
+    while True:
+        tweet_generator = Markov(all_text)
+        suggested_tweets = [tweet_generator.build_tweet() for _ in range(5)]
+        print("Suggested tweets:")
+        for i, tweet in enumerate(suggested_tweets):
+            print("  %d. %s" % (i + 1, tweet))
+
+        choice = int(input("Select a tweet to publish [1 thru %d] or 0 to regenerate: " % len(suggested_tweets)))
+        if choice > 0:
+            bot.send_tweet(suggested_tweets[choice - 1])
+            break
 
 
 if __name__ == '__main__':
