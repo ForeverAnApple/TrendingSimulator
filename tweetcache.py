@@ -35,11 +35,3 @@ class TweetCache:
         cursor.execute('INSERT INTO tweet (body, topic, timestamp_added) VALUES (?, ?, ?)',
                        (body, topic, timestamp_added))
         self.db.commit()
-
-
-cache = TweetCache()
-cache.add_tweet("This is a fake tweet", "Trending A")
-
-print("Tweets in cache:")
-for tweet in cache.get_tweets("Trending A"):
-    print(tweet)
