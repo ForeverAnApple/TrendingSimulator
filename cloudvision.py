@@ -4,11 +4,8 @@ import requests
 class VisionApi():
     # images will be a list of tuples, with tuple being (image_id, image_url)
     def __init__(self, images):
-        # [START vision_quickstart]
 
-        # Instantiates a client
-        # [START vision_python_migration_client]
-
+        # I'm "hiding" the key on a file within my root folder, which is ignored by .gitignore
         api_f = open('cloud-vision.key', 'r')
         api_token = api_f.read()
         print("token: " + api_token)
@@ -17,6 +14,8 @@ class VisionApi():
         print("url: " + self.DISCOVERY_URL)
 
     def getlabels(self):
+        # MAX number of images per request is 16
+
         # Created a massive request for all the images
         request = {'requests': []}
         for image in self.images:
@@ -38,24 +37,23 @@ class VisionApi():
         # HTTP POST the request with json body
         response = requests.post(self.DISCOVERY_URL, json=request)
         print(response.status_code, response.reason)
-
-        # Parse into json dictionary
-        jres = response.json()
-
-        # construct label
         labels = []
+        if response.status_code == 200:
+            # Parse into json dictionary
+            jres = response.json()
 
-        # This goes through each response, and for every single description of the big image requests sent, create a
-        # list of lists of image ids and a list of their tags received from Google Cloud Vision
-        for label_i, response in enumerate(jres['responses']):
-            innertags = []
-            for annotations in response['labelAnnotations']:
-                innertags.append(annotations['description'])
+            # construct label
+            # This goes through each response, and for every single description of the big image requests sent, create a
+            # list of lists of image ids and a list of their tags received from Google Cloud Vision
+            for label_i, response in enumerate(jres['responses']):
+                innertags = []
+                for annotations in response['labelAnnotations']:
+                    innertags.append(annotations['description'])
 
-            print('assigning label', label_i)
-            print('images at', label_i, 'is', self.images[label_i])
-            print('inner tags for label', label_i, 'is', innertags)
-            labels.append([self.images[label_i][0], innertags])
+                print('assigning label', label_i)
+                print('images at', label_i, 'is', self.images[label_i])
+                print('inner tags for label', label_i, 'is', innertags)
+                labels.append([self.images[label_i][0], innertags])
 
         print(labels)
         # labels = [annotations['description'] for annotations in jres['responses'][0]['labelAnnotations']]
@@ -72,6 +70,11 @@ def main():
               (1, 'https://www.petmd.com/sites/default/files/salmonella-infection-dogs.jpg'),
               (0, 'https://media.gettyimages.com/photos/fish-shape-made-up-of-fish-picture-id182108931'),
               (3, 'https://i.imgur.com/PT3Nh7B.jpg'))
+    testimgs = []
+
+    # IMPORTANT! The maximum number of images sent per request is 16. If you go over, you will receive a 400 bad request
+    for i in range(16):
+        testimgs.append((2, 'https://i.imgur.com/BBcy6Wc.jpg'))
     test_img = VisionApi(images)
     test_img.getlabels()
 

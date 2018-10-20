@@ -123,7 +123,7 @@ class Bot:
 def main():
     cache = TweetCache()
 
-    #vision = VisionApi()
+    vision = VisionApi()
 
     bot = Bot()
     bot.login('TrendySimulator', '7mDZJ7PEfbdie77')
