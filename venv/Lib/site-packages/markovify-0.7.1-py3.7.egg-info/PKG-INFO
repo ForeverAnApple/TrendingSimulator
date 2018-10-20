@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: markovify
+Version: 0.7.1
+Summary: A simple, extensible Markov chain generator. Uses include generating random semi-plausible sentences based on an existing text.
+Home-page: http://github.com/jsvine/markovify
+Author: Jeremy Singer-Vine
+Author-email: jsvine@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: markov chain text
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
