@@ -3,3 +3,5 @@
 /var/
 geckodriver.log
 __pycache__/
+*.key
+key.json
