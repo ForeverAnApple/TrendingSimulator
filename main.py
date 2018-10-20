@@ -3,6 +3,7 @@ from selenium import webdriver
 import random
 import time
 from tweetcache import TweetCache
+import re
 
 class Markov:
     def build_tweet(self):
@@ -12,14 +13,11 @@ class Markov:
         tweet = text_model.make_short_sentence(140)
         while len(tweet) < 70:
             tweet = text_model.make_short_sentence(140)
-        print(tweet)
+        return tweet
 
-    def __init__(self, resource_location):
-        print('trying to open file')
-        with open(resource_location) as f:
-            raw_text = f.read()
+    def __init__(self, raw_text):
+        print('trying to initialize text with all tweets.')
         self.text = raw_text
-        print('finished initializing')
 
 
 class Bot:
@@ -104,7 +102,12 @@ class Bot:
             milli_current = self.current_time_millis()
 
         # Scrape Tweets
+        regex = re.compile(r'[\n\r\t]');
         self.tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
+        # Remove \n, \r, and \t from the tweets.
+        for i in range(len(self.tweets)):
+            self.tweets[i] = regex.sub('', self.tweets[i])
+
         # Scrape Image Urls
         image_elements = self.browser.find_elements_by_class_name('AdaptiveMedia-photoContainer.js-adaptive-photo')
         for image in image_elements:
@@ -138,10 +141,16 @@ def main():
 
         cache.add_tweets(bot.tweets, selected_trend_text)
 
-    for i, tweet in enumerate(cache.get_tweets(selected_trend_text)):
-        print("%d. <<%s>>" % (i + 1, tweet))
+    all_text = ''
+    for tweet in cache.get_tweets(selected_trend_text):
+        if not tweet.endswith('.'):
+            all_text = all_text + tweet + '.'
+        else:
+            all_text = all_text + tweet
 
-    #text_model = markovify.Text(string)
+    tweet_generator = Markov(all_text)
+    generated_tweet = tweet_generator.build_tweet()
+    print(generated_tweet)
 
 
 if __name__ == '__main__':
