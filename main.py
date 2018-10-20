@@ -148,7 +148,7 @@ def main():
     selected_trend_text = selected_trend.text
 
     # Load in new tweets if the cache misses
-    if cache.cache_age(selected_trend_text) > 5*60*60:  # 5 hours
+    if cache.cache_age(selected_trend_text) > 30*60:  # 30 minutes
         bot.trending_dictionary[selected_trend].click()
         bot.sleep_range(3, 7)
 
