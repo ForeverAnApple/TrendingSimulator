@@ -2,6 +2,7 @@ import markovify
 from selenium import webdriver
 from random import randint
 import time
+from tweetcache import TweetCache
 
 class Markov:
     def build_tweet(self):
@@ -26,6 +27,7 @@ class Bot:
         self.browser = webdriver.Firefox()
         self.trending_dictionary = {}
         self.trending_elements_names = []
+        self.tweets = []
 
     def navigate(self, url):
         self.browser.get(url)
@@ -78,8 +80,6 @@ class Bot:
 
         # For now go ahead and click on the first option
         self.browser.implicitly_wait(10)
-        self.trending_dictionary[self.trending_elements_names[3]].click()
-        self.sleep_range(3, 7)
 
     @staticmethod
     def current_time_millis():
@@ -94,19 +94,32 @@ class Bot:
             milli_current = self.current_time_millis()
 
         # We're just going to assume we're on a page containing tweets
-        tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
-        print(len(tweets))
-        for tweet in tweets:
-            print(tweet.text)
-            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-
+        self.tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
 
 def main():
+    cache = TweetCache()
+
     bot = Bot()
     bot.login('TrendySimulator', '7mDZJ7PEfbdie77')
     bot.sleep_range(1, 3)
     bot.select_trending_topics()
+
+    print("Current trends on twitter:")
+    for name, i in enumerate(bot.trending_elements_names):
+        print("  %d. %s " % (i, name))
+
+    selected_trend_index = input("Select a trend [1 thru %d]: " % (len(bot.trending_elements_names)))
+    selected_trend = bot.trending_elements_names[selected_trend_index]
+
+    bot.trending_dictionary[selected_trend].click()
+    bot.sleep_range(3, 7)
+
     bot.scrape_tweets_on_page(30000)
+
+    for tweet in bot.tweets:
+        cache.add_tweet(tweet.text, selected_trend)
+        print(tweet.text)
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 
     #text_model = markovify.Text(string)
 
