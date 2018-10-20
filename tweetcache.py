@@ -11,22 +11,22 @@ class TweetCache:
         cursor.execute('''CREATE TABLE IF NOT EXISTS tweet (
             tweet_id INTEGER PRIMARY KEY AUTOINCREMENT,
             body TEXT NOT NULL,
-            hashtag TEXT NOT NULL,
+            topic TEXT NOT NULL,
             timestamp_added INTEGER NOT NULL)''')
         self.db.commit()
 
     # returns a tuple of (tweet_text, access_datetime)
-    def get_tweets(self, hashtag):
+    def get_tweets(self, topic):
         cursor = self.db.cursor()
-        cursor.execute('SELECT body, timestamp_added FROM tweet t WHERE hashtag = ?', (hashtag,))
+        cursor.execute('SELECT body, timestamp_added FROM tweet t WHERE topic = ?', (topic,))
 
         for row in cursor:
             yield row[0], datetime.fromtimestamp(row[1])
 
-    def add_tweet(self, body, hashtag, timestamp_added=int(time.time())):
+    def add_tweet(self, body, topic, timestamp_added=int(time.time())):
         cursor = self.db.cursor()
-        cursor.execute('INSERT INTO tweet (body, hashtag, timestamp_added) VALUES (?, ?, ?)',
-                       (body, hashtag, timestamp_added))
+        cursor.execute('INSERT INTO tweet (body, topic, timestamp_added) VALUES (?, ?, ?)',
+                       (body, topic, timestamp_added))
         self.db.commit()
 
 
