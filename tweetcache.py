@@ -81,6 +81,13 @@ class TweetCache:
         cursor = self.db.cursor()
         for tweet in tweets:
             cursor.execute('''INSERT INTO tweet (body, topic_id, timestamp_added) SELECT ?, topic_id, ?
-                FROM topic where topic_name = ?''',
-                           (tweet, int(time.time()), topic))
+                FROM topic WHERE topic_name = ?''', (tweet, int(time.time()), topic))
+        self.db.commit()
+
+    def add_images(self, image_urls, topic):
+        self.__add_topic(topic)
+        cursor = self.db.cursor()
+        for url in image_urls:
+            cursor.execute('''INSERT INTO image (url, topic_id) SELECT ?, topic_id
+                FROM topic WHERE topic_name = ?''', (url, topic))
         self.db.commit()

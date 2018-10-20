@@ -16,6 +16,17 @@ defined region. It will take these trends, analyze and parse the related tweets 
 ### Requisites:
 1. Python 3.7
 1. [markovify](https://github.com/jsvine/markovify)
-1. 
+1. Selenium
+1. Google Cloud Vision API
+   1. Needs an API key.
+
+## Installation
 
 
+
+
+#### Created by:
+* [win93](https://github.com/win93)
+* [ForeverAnApple](https://github.com/ForeverAnApple)
+* [JosephCW](https://github.com/JosephCW)
+* [mburnes](https://github.com/mburnes)
