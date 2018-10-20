@@ -87,7 +87,7 @@ def main():
     bot.sleep_range(1, 3)
     bot.select_trending_topics()
 
-    text_model = markovify.Text(string)
+    #text_model = markovify.Text(string)
 
 
 if __name__ == '__main__':
