@@ -4,6 +4,7 @@ import random
 import time
 from tweetcache import TweetCache
 import re
+from urllib.parse import quote
 from cloudvision import VisionApi
 
 
@@ -63,7 +64,7 @@ class Bot:
         # Click the Log in button
         login_button = self.browser.find_element_by_class_name('submit.EdgeButton.EdgeButton--primary.EdgeButtom--medium')
         login_button.click()
-        print('Done')
+        self.sleep_range(1, 3)
 
     def send_tweet(self, tweet_to_send):
         # Navigate to twitter home page
@@ -105,8 +106,8 @@ class Bot:
             milli_current = self.current_time_millis()
 
         # Scrape Tweets
-        regex = re.compile(r'[\n\r\t]');
         self.tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
+        regex = re.compile(r'[\n\r\t]');
         # Remove \n, \r, and \t from the tweets.
         for i in range(len(self.tweets)):
             self.formatted_tweets.append(regex.sub('', self.tweets[i].text))
@@ -122,26 +123,40 @@ class Bot:
 
 def main():
     cache = TweetCache()
-
     #vision = VisionApi()
 
     bot = Bot()
     bot.login('TrendySimulator', '7mDZJ7PEfbdie77')
-    bot.sleep_range(1, 3)
+
     bot.select_trending_topics()
 
     print("Current trends on twitter:")
     for i, name in enumerate(bot.trending_elements_names):
         print("  %d. %s " % (i + 1, name.text))
 
-    selected_trend_index = int(input("Select a trend [1 thru %d]: " % (len(bot.trending_elements_names)))) - 1
-    selected_trend = bot.trending_elements_names[selected_trend_index]
-    selected_trend_text = selected_trend.text
+    print('Would you like to choose a trending tag (0), or enter your own tag/username (1)?: ')
+    user_option = int(input())
+    if user_option == 0:
+        # click trending from the side bar
+        selected_trend_index = int(input("Select a trend [1 thru %d]: " % (len(bot.trending_elements_names)))) - 1
+        selected_trend = bot.trending_elements_names[selected_trend_index]
+        selected_trend_text = selected_trend.text
+    else:
+        # the user is going to enter their own tag/user to scrape.
+        selected_trend_text = input('Enter the tag you want to search for: ')
+        if selected_trend_text.startswith('@'):
+            bot.navigate('https://twitter.com/' + selected_trend_text[1:])
+        elif selected_trend_text.startswith('#'):
+            bot.navigate('https://twitter.com/search?q=%23' + selected_trend_text[1:] + '&src=tyah')
+        else:
+            bot.navigate('https://twitter.com/search?f=tweets&q=' + quote(selected_trend_text) + '&src=typd')
 
     if cache.cache_age(selected_trend_text) > 5*60*60:  # 5 hours
-        bot.trending_dictionary[selected_trend].click()
-        bot.sleep_range(3, 7)
+        # only click if we haven't already navigated there
+        if user_option == 0:
+            bot.trending_dictionary[selected_trend].click()
 
+        bot.sleep_range(3, 7)
         bot.scrape_tweets_on_page(60*1000)
 
         cache.add_tweets(bot.formatted_tweets, selected_trend_text)
