@@ -13,6 +13,9 @@ defined region. It will take these trends, analyze and parse the related tweets 
 ### Planned features:
 
 
+
+## Installation
+
 ### Requisites:
 1. Python 3.7
 1. [markovify](https://github.com/jsvine/markovify)
@@ -22,9 +25,10 @@ defined region. It will take these trends, analyze and parse the related tweets 
 1. Google Cloud Vision API
    1. Needs an API key.
 
-## Installation
 
-
+1. ```clone https://github.com/ForeverAnApple/TrendingSimulator/```
+1. Check the requirements.txt file.
+1. run the python script you dolt
 
 
 #### Created by:
