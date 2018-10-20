@@ -1,5 +1,6 @@
 import sqlite3
 import time
+from datetime import datetime
 
 
 class TweetCache:
@@ -14,17 +15,18 @@ class TweetCache:
             timestamp_added INTEGER NOT NULL)''')
         self.db.commit()
 
+    # returns a tuple of (tweet_text, access_datetime)
     def get_tweets(self, hashtag):
         cursor = self.db.cursor()
-        cursor.execute('SELECT body FROM tweet t WHERE hashtag = ?', (hashtag,))
+        cursor.execute('SELECT body, timestamp_added FROM tweet t WHERE hashtag = ?', (hashtag,))
 
         for row in cursor:
-            yield row[0]
+            yield row[0], datetime.fromtimestamp(row[1])
 
     def add_tweet(self, body, hashtag, timestamp_added=int(time.time())):
         cursor = self.db.cursor()
         cursor.execute('INSERT INTO tweet (body, hashtag, timestamp_added) VALUES (?, ?, ?)',
-            (body, hashtag, timestamp_added))
+                       (body, hashtag, timestamp_added))
         self.db.commit()
 
 
