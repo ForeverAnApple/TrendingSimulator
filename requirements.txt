@@ -1,1 +1,2 @@
-
+markovify == 0.7.1
+selenium == 	3.14.0
