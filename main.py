@@ -85,7 +85,10 @@ def main():
 
         choice = int(input("Select a tweet to publish [1 thru %d] or 0 to regenerate: " % len(suggested_tweets)))
         if choice > 0:
-            bot.send_tweet(suggested_tweets[choice - 1])
+
+            # TEMP
+            bot.download_remote_image('https://pbs.twimg.com/media/DqAIeUIX0AEgNk7.jpg')
+            bot.send_tweet(suggested_tweets[choice - 1], True)
             break
 
 

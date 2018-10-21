@@ -1,4 +1,6 @@
 from selenium import webdriver
+from urllib import request
+import os
 import random
 import time
 import re
@@ -12,6 +14,7 @@ class Bot:
         self.tweets = []
         self.formatted_tweets = []
         self.image_urls = []
+        self.temp_file = None
 
     def navigate(self, url):
         self.browser.get(url)
@@ -47,10 +50,20 @@ class Bot:
         login_button.click()
         self.sleep_range(1, 3)
 
-    def send_tweet(self, tweet_to_send):
+    def send_tweet(self, tweet_to_send, attach_image):
         # Navigate to twitter home page
         self.navigate('https://twitter.com/')
         self.browser.implicitly_wait(5)
+
+        if attach_image:
+            # Post the Image
+            input_class = self.browser.find_element_by_class_name('file-input.js-tooltip')
+            self.browser.execute_script("arguments[0].type = 'file';", input_class)
+            self.sleep_range(1,3)
+            input_class.send_keys(r'%s' % os.path.join(os.getcwd(), 'tmpImage.jpg'))
+
+        self.sleep_range(3, 5)
+
         # Select the field to make it expand
         tweet_field = self.browser.find_element_by_id('tweet-box-home-timeline')
         tweet_field.click()
@@ -62,9 +75,10 @@ class Bot:
         self.slow_send_keys(tweet_field, tweet_to_send)
         tweet_field.click()
         self.sleep_range(3, 5)
+
         # Click the tweet button
-        tweet_button = self.browser.find_element_by_class_name('tweet-action.EdgeButton.EdgeButton--primary.js-tweet-btn')
-        tweet_button.click()
+        #tweet_button = self.browser.find_element_by_class_name('tweet-action.EdgeButton.EdgeButton--primary.js-tweet-btn')
+        #tweet_button.click()
 
     def select_trending_topics(self):
         # Clear the trending list
@@ -107,3 +121,7 @@ class Bot:
 
         print('Num Tweets: ' + str(len(self.tweets)))
         print('Num Images: ' + str(len(self.image_urls)))
+
+    def download_remote_image(self, remote_url):
+        request.urlretrieve(remote_url, 'tmpImage.jpg')
+        print('downloaded image')
