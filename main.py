@@ -47,7 +47,7 @@ def main():
 
     # Load in new tweets if the cache misses
     if cache.cache_age(selected_trend_text) > 30 * 60:  # 30 minutes
-        if user_option == 0:
+        if user_option != 0:
             bot.trending_dictionary[selected_trend].click()
         else:
             if selected_trend_text.startswith('@'):
