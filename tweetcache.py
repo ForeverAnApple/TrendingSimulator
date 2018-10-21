@@ -79,15 +79,17 @@ class TweetCache:
                 ''', (image_tag[0], tag))
             self.db.commit()
 
-    def get_images_for_word(self, word):
+    def get_images_for_word(self, word, topic):
         cursor = self.db.cursor()
         cursor.execute("""SELECT image.url
             FROM image
             JOIN image_tag ON image.image_id = image_tag.image_id
-            WHERE tag LIKE '% ' || ?
+            JOIN topic ON image.topic_id = topic.topic_id
+            WHERE (tag LIKE '% ' || ?
             OR tag LIKE '% ' || ? || ' %'
             OR tag LIKE ? || ' %'
-            OR tag = ?""", (word, word, word, word))
+            OR tag = ?)
+            AND topic_name = ?""", (word, word, word, word, topic))
         for row in cursor:
             yield row[0]
 

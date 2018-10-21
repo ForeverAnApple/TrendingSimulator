@@ -11,7 +11,7 @@ def suggest_image(cache, tweet, topic):
     urls = []
     for match in re.finditer('[a-zA-Z]+', tweet):
         # print(match.group(0), end=' ')
-        for url in cache.get_images_for_word(match.group(0)):
+        for url in cache.get_images_for_word(match.group(0), topic):
             urls.append(url)
             # print('x', end='')
         # print('')
@@ -76,7 +76,7 @@ def main():
         cache.add_images(bot.image_urls, selected_trend_text)
 
         # Google cloud services
-        print("Contacting google(tm) Cloud(r) services(sm)...")
+        print("Contacting Google Cloud Services...")
         notag_images = cache.get_notag_images(selected_trend_text)
         cache.add_image_tags(notag_images, selected_trend_text)
     else:
