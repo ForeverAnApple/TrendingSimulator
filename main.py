@@ -11,7 +11,7 @@ def suggest_image(cache, tweet, topic):
     urls = []
     for match in re.finditer('[a-zA-Z]+', tweet):
         # print(match.group(0), end=' ')
-        for url in cache.get_images_for_word(match.group(0)):
+        for url in cache.get_images_for_word(match.group(0), topic):
             urls.append(url)
             # print('x', end='')
         # print('')
