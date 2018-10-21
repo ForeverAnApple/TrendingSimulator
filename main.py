@@ -43,11 +43,12 @@ def main():
             bot.trending_dictionary[selected_trend].click()
 
         bot.sleep_range(3, 7)
-        bot.scrape_tweets_on_page(60*1000)
+        bot.scrape_tweets_on_page(15*1000)
 
         cache.add_tweets(bot.formatted_tweets, selected_trend_text)
         cache.add_images(bot.image_urls, selected_trend_text)
-        notag_images = cache.get_notag_images(selected_trend_text)
+        # notag_images = cache.get_notag_images(selected_trend_text)
+        # cache.add_image_tags(notag_images, selected_trend_text)
 
     # Grab tweets from cache and prep for markov ingestion
     all_text = ''

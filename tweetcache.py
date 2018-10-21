@@ -45,6 +45,41 @@ class TweetCache:
         ''', (topic,))
         return cursor
 
+    def add_image_tags(self, images, topic):
+        img_i = 0
+        image_tags = list()
+        img_req = list()
+        for image in images:
+            img_req.append((image[0], image[1]))
+            img_i += 1
+            # Every 16 images in the request the google vision api will run, returning all the labels generated for all
+            # the images with their image id
+            if img_i == 16:
+                vision = VisionApi(img_req)
+                labels = vision.getlabels(topic)
+                for label in labels:
+                    image_tags.append(label)
+                img_i = 0
+                img_req.clear()
+
+        # Finish up the rest of the requests if needed.
+        if len(img_req) != 0:
+            vision = VisionApi(img_req)
+            labels = vision.getlabels(topic)
+            for label in labels:
+                image_tags.append(label)
+
+        print("image tags:", image_tags)
+        # Now, add all these labels back into the database
+        cursor = self.db.cursor()
+        for image_tag in image_tags:
+            for tag in image_tag[1]:
+                cursor.execute('''INSERT INTO image_tag
+                    (image_id, tag)
+                    VALUES (?,?)
+                ''', (image_tag[0], tag))
+            self.db.commit()
+
     # returns cache age in seconds
     def cache_age(self, topic):
         cursor = self.db.cursor()

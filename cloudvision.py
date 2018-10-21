@@ -13,7 +13,7 @@ class VisionApi():
         self.DISCOVERY_URL = 'https://vision.googleapis.com/v1/images:annotate?key=' + api_token
         print("url: " + self.DISCOVERY_URL)
 
-    def getlabels(self):
+    def getlabels(self, topic):
         # MAX number of images per request is 16
 
         # Created a massive request for all the images
@@ -47,14 +47,15 @@ class VisionApi():
             # This goes through each response, and for every single description of the big image requests sent, create a
             # list of lists of image ids and a list of their tags received from Google Cloud Vision
             for label_i, response in enumerate(jres['responses']):
-                innertags = []
-                for annotations in response['labelAnnotations']:
-                    innertags.append(annotations['description'])
+                innertags = [topic]
+                if 'labelAnnotations' in response:
+                    for annotations in response['labelAnnotations']:
+                        innertags.append(annotations['description'])
 
-                print('assigning label', label_i)
-                print('images at', label_i, 'is', self.images[label_i])
-                print('inner tags for label', label_i, 'is', innertags)
-                labels.append([self.images[label_i][0], innertags])
+                    print('assigning label', label_i)
+                    print('images at', label_i, 'is', self.images[label_i])
+                    print('inner tags for label', label_i, 'is', innertags)
+                    labels.append([self.images[label_i][0], innertags])
 
         print(labels)
         # labels = [annotations['description'] for annotations in jres['responses'][0]['labelAnnotations']]

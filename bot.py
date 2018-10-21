@@ -3,6 +3,7 @@ import random
 import time
 import re
 
+
 class Bot:
     def __init__(self):
         self.browser = webdriver.Firefox()
