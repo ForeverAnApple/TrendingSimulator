@@ -36,8 +36,8 @@ class VisionApi():
 
         # HTTP POST the request with json body
         response = requests.post(self.DISCOVERY_URL, json=request)
-        print(response.status_code, response.reason)
-        print(response.text)
+        # print(response.status_code, response.reason)
+        # print(response.text)
         labels = []
         if response.status_code == 200:
             # Parse into json dictionary
@@ -47,7 +47,8 @@ class VisionApi():
             # This goes through each response, and for every single description of the big image requests sent, create a
             # list of lists of image ids and a list of their tags received from Google Cloud Vision
             for label_i, response in enumerate(jres['responses']):
-                innertags = [topic]
+                # innertags = [topic]
+                innertags = []
                 if 'labelAnnotations' in response:
                     for annotations in response['labelAnnotations']:
                         innertags.append(annotations['description'])
@@ -57,7 +58,7 @@ class VisionApi():
                     print('inner tags for label', label_i, 'is', innertags)
                     labels.append([self.images[label_i][0], innertags])
 
-        print(labels)
+        # print(labels)
         # labels = [annotations['description'] for annotations in jres['responses'][0]['labelAnnotations']]
         # print("Descriptions for " + self.img_url + ":", labels)
         # labels = response.label_annotations

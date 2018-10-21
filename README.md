@@ -13,24 +13,26 @@ defined region. It will take these trends, analyze and parse the related tweets 
 ## Installation
 
 ### Requisites:
+1. ```clone https://github.com/ForeverAnApple/TrendingSimulator/```
 1. Python 3.7
 1. [markovify](https://github.com/jsvine/markovify)
 1. Selenium
-   1. [Geckodriver](https://github.com/mozilla/geckodriver/) (Firefox)
-   1. [Chromedriver](http://chromedriver.chromium.org/downloads) (Chrome/Chromium)
+    1. [Geckodriver](https://github.com/mozilla/geckodriver/) (Firefox)
+    1. [Chromedriver](http://chromedriver.chromium.org/downloads) (Chrome/Chromium)
 1. Google Cloud Vision API
-   1. Needs an API key.
-
-
-1. ```clone https://github.com/ForeverAnApple/TrendingSimulator/```
+    1. Google Cloud Vision [Authentication](https://cloud.google.com/vision/docs/auth)
+    2. Create `cloud-vision.key` in your root directory with the Google Cloud Vision API Key
+1. Create `twitter_login.key` in your root directory with your twitter bot username and password (space separated).
 2. Check the requirements.txt file.
 3. Install all dependencies. 
-4. Run your perferred Selenium driver (Geckodriver/Chromedriver)
+4. Make sure your Selenium drivers are inside your PATH.
+    1. You can also run Chromedriver without adding it to your path before running `main.py`
 5. Run main.py
+    1. `python3 main.py`
 
 
 #### Created by:
-* [win93](https://github.com/win93)
-* [ForeverAnApple](https://github.com/ForeverAnApple)
-* [JosephCW](https://github.com/JosephCW)
-* [mburnes](https://github.com/mburnes)
+* [Alex Gittemeier](https://github.com/win93)
+* [Daiwei Chen](https://github.com/ForeverAnApple)
+* [Joseph Watts](https://github.com/JosephCW)
+* [Michael Burnes](https://github.com/mburnes)
