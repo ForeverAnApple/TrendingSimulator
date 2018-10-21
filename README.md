@@ -44,6 +44,8 @@ defined region. It will take these trends, analyze and parse the related tweets 
 ### Additional Information
 #### Scraping
 * Selenium creates a wrapper around the web browser. Normally used for unit testing, we are using it to scrape twitter.
+##### Headless Mode
+* By default, your browser should open and give a good demo on how the scraping and posting works. However, if the user wants to, it is possible to run purely in a commandline interface.
 
 #### Caching
 * Looks like Selenium takes a while to scrape pages, to make this process more efficient. We will cache tweets 
@@ -63,9 +65,7 @@ pictures (16) in every request.
 * During image selection phase, images will be matched to the tweet using the tags given to the images. The program will
 choose the most "relevant" image by seeing how well the tags match with the tweet itself.
 
-#### Headless Mode
-* By default, your browser should open and give a good demo on how the scraping and posting works. However, if the user \
-wants to, it is possible to run purely in a commandline interface.
+
 
 
 
