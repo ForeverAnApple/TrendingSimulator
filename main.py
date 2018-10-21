@@ -2,7 +2,6 @@ from urllib.parse import quote
 import re
 import random
 
-from cloudvision import VisionApi
 from tweetcache import TweetCache
 from bot import Bot
 from markov import Markov
@@ -23,7 +22,6 @@ def suggest_image(cache, tweet, topic):
 
 def main():
     cache = TweetCache()
-    # vision = VisionApi()
 
     bot = Bot()
     user, passw = open('twitter_login.key', 'r').readline().split(' ')
@@ -70,12 +68,18 @@ def main():
             bot.browser.implicitly_wait(5)
 
         bot.sleep_range(3, 7)
+        print("Scraping tweets for 1 minute. Please be patient...")
         bot.scrape_tweets_on_page(60 * 1000)
 
         cache.add_tweets(bot.formatted_tweets, selected_trend_text)
         cache.add_images(bot.image_urls, selected_trend_text)
-        # notag_images = cache.get_notag_images(selected_trend_text)
-        # cache.add_image_tags(notag_images, selected_trend_text)
+
+        # Google cloud services
+        print("Contacting google(tm) Cloud(r) services(sm)...")
+        notag_images = cache.get_notag_images(selected_trend_text)
+        cache.add_image_tags(notag_images, selected_trend_text)
+    else:
+        print("Cache hit!")
 
     # Grab tweets from cache and prep for markov ingestion
     all_text = ''
@@ -86,7 +90,7 @@ def main():
             all_text = all_text + tweet + '. '
         else:
             all_text = all_text + tweet + ' '
-    print("Loaded %d tweets" % tweet_count)
+    print("Loaded %d tweets from cache" % tweet_count)
 
     # Generate new tweets
     while True:
@@ -101,7 +105,10 @@ def main():
 
         choice = int(input("Select a tweet to publish [1 thru %d] or 0 to regenerate: " % len(suggested_tweets)))
         if choice > 0:
-            bot.send_tweet(suggested_tweets[choice - 1])
+
+            # TEMP
+            bot.download_remote_image('https://pbs.twimg.com/media/DqAIeUIX0AEgNk7.jpg')
+            bot.send_tweet(suggested_tweets[choice - 1], True)
             break
 
 

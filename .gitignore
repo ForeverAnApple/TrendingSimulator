@@ -6,3 +6,4 @@ __pycache__/
 *.key
 key.json
 .idea/workspace.xml
+tmpImage.jpg
