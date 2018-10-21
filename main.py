@@ -1,9 +1,24 @@
 from urllib.parse import quote
-from cloudvision import VisionApi
+import re
+import random
 
+from cloudvision import VisionApi
 from tweetcache import TweetCache
 from bot import Bot
 from markov import Markov
+
+
+def suggest_image(cache, tweet, topic):
+    urls = []
+    for match in re.finditer('[a-zA-Z]+', tweet):
+        for url in cache.get_images_for_word(match.group(0)):
+            urls.append(url)
+    if len(urls) == 0:
+        print("Did not find any text-to-tag matches. Falling back to topic-to-topic matches.")
+        for url in cache.get_images_for_topic(topic):
+            urls.append(url)
+    print(urls)
+    return random.choice(urls) if len(urls) > 0 else None
 
 
 def main():
@@ -21,12 +36,10 @@ def main():
     for i, name in enumerate(bot.trending_elements_names):
         print("  %d. %s" % (i + 1, name.text))
 
-    print('Would you like to choose a trending tag (0), or enter your own tag/username (1)?: ')
-    user_option = int(input())
-    if user_option == 0:
+    user_option = int(input('Select a trend [1 thru %d], or type 0 for a custom search: ' % len(bot.trending_elements_names)))
+    if user_option != 0:
         # click trending from the side bar
-        selected_trend_index = int(input("Select a trend [1 thru %d]: " % (len(bot.trending_elements_names)))) - 1
-        selected_trend = bot.trending_elements_names[selected_trend_index]
+        selected_trend = bot.trending_elements_names[user_option - 1]
         selected_trend_text = selected_trend.text
     else:
         # the user is going to enter their own tag/user to scrape.
@@ -34,7 +47,7 @@ def main():
 
     # Load in new tweets if the cache misses
     if cache.cache_age(selected_trend_text) > 30 * 60:  # 30 minutes
-        if user_option == 0:
+        if user_option != 0:
             bot.trending_dictionary[selected_trend].click()
         else:
             if selected_trend_text.startswith('@'):
@@ -78,10 +91,13 @@ def main():
     # Generate new tweets
     while True:
         tweet_generator = Markov(all_text)
-        suggested_tweets = [tweet_generator.build_tweet(selected_trend_text) for _ in range(5)]
+        suggested_tweets = []
         print("Suggested tweets:")
-        for i, tweet in enumerate(suggested_tweets):
-            print("  %d. %s" % (i + 1, tweet))
+        for i in range(5):
+            tweet = tweet_generator.build_tweet(selected_trend_text)
+            image = suggest_image(cache, tweet, selected_trend_text)
+            print("  %d. %s (%s)" % (i + 1, tweet, image))
+            suggested_tweets.append((tweet, image))
 
         choice = int(input("Select a tweet to publish [1 thru %d] or 0 to regenerate: " % len(suggested_tweets)))
         if choice > 0:
