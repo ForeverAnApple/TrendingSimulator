@@ -10,13 +10,15 @@ from markov import Markov
 def suggest_image(cache, tweet, topic):
     urls = []
     for match in re.finditer('[a-zA-Z]+', tweet):
+        # print(match.group(0), end=' ')
         for url in cache.get_images_for_word(match.group(0)):
             urls.append(url)
+            # print('x', end='')
+        # print('')
     if len(urls) == 0:
         print("Did not find any text-to-tag matches. Falling back to topic-to-topic matches.")
         for url in cache.get_images_for_topic(topic):
             urls.append(url)
-    print(urls)
     return random.choice(urls) if len(urls) > 0 else None
 
 
@@ -50,13 +52,13 @@ def main():
         else:
             if selected_trend_text.startswith('@'):
                 bot.navigate('https://twitter.com/' + selected_trend_text[1:])
+            elif selected_trend_text.startswith('#'):
+                bot.navigate('https://twitter.com/hashtag/' + selected_trend_text[1:])
             else:
-                if selected_trend_text.startswith('#'):
-                    bot.navigate('https://twitter.com/hashtag/' + selected_trend_text[1:])
-                else:
-                    bot.navigate('https://twitter.com/search?f=tweets&q=' + quote(selected_trend_text) + '&src=typd')
+                bot.navigate('https://twitter.com/search?f=tweets&q=' + quote(selected_trend_text) + '&src=typd')
 
         # If it isn't a users page click to get the newest posted items.
+        print("Setting up webpage to begin scraping...")
         if not selected_trend_text.startswith('@'):
             bot.browser.implicitly_wait(5)
             latest_button = bot.browser.find_elements_by_class_name(
@@ -68,7 +70,6 @@ def main():
             bot.browser.implicitly_wait(5)
 
         bot.sleep_range(3, 7)
-        print("Scraping tweets for 1 minute. Please be patient...")
         bot.scrape_tweets_on_page(60 * 1000)
 
         cache.add_tweets(bot.formatted_tweets, selected_trend_text)
@@ -105,10 +106,10 @@ def main():
 
         choice = int(input("Select a tweet to publish [1 thru %d] or 0 to regenerate: " % len(suggested_tweets)))
         if choice > 0:
-
-            # TEMP
-            bot.download_remote_image('https://pbs.twimg.com/media/DqAIeUIX0AEgNk7.jpg')
-            bot.send_tweet(suggested_tweets[choice - 1], True)
+            tweet, image = suggested_tweets[choice - 1]
+            if image is not None:
+                bot.download_remote_image(image)
+            bot.send_tweet(tweet, image is not None)
             break
 
 

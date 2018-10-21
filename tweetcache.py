@@ -84,7 +84,10 @@ class TweetCache:
         cursor.execute("""SELECT image.url
             FROM image
             JOIN image_tag ON image.image_id = image_tag.image_id
-            WHERE tag LIKE '%' + ? + '%'""", (word,))
+            WHERE tag LIKE '% ' || ?
+            OR tag LIKE '% ' || ? || ' %'
+            OR tag LIKE ? || ' %'
+            OR tag = ?""", (word, word, word, word))
         for row in cursor:
             yield row[0]
 
@@ -141,3 +144,9 @@ class TweetCache:
             cursor.execute('''INSERT INTO image (url, topic_id) SELECT ?, topic_id
                 FROM topic WHERE topic_name = ?''', (url, topic))
         self.db.commit()
+
+
+if __name__ == '__main__':
+    cache = TweetCache()
+    for x in cache.get_images_for_word("dog"):
+        print(x)

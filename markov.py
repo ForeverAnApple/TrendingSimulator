@@ -15,9 +15,10 @@ class Markov:
     def add_tag(current, tag):
         if tag not in current:
             if tag.startswith('#'):
-                return '#' + current + ' ' + tag
-            elif not tag.startswith('@'):
-                return tag + ': ' + current
+                return current + ' ' + tag
+            elif not tag.startswith('@'):  # handle general search queries
+                # XXX: make it fail the while condition in build_tweet()
+                return ''
         return current
 
     def __init__(self, raw_text):

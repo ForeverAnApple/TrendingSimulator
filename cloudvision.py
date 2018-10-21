@@ -8,10 +8,10 @@ class VisionApi():
         # I'm "hiding" the key on a file within my root folder, which is ignored by .gitignore
         api_f = open('cloud-vision.key', 'r')
         api_token = api_f.read()
-        print("token: " + api_token)
+        # print("token: " + api_token)
         self.images = images
         self.DISCOVERY_URL = 'https://vision.googleapis.com/v1/images:annotate?key=' + api_token
-        print("url: " + self.DISCOVERY_URL)
+        # print("url: " + self.DISCOVERY_URL)
 
     def getlabels(self, topic):
         # MAX number of images per request is 16
@@ -53,9 +53,9 @@ class VisionApi():
                     for annotations in response['labelAnnotations']:
                         innertags.append(annotations['description'])
 
-                    print('assigning label', label_i)
-                    print('images at', label_i, 'is', self.images[label_i])
-                    print('inner tags for label', label_i, 'is', innertags)
+                    # print('assigning label', label_i)
+                    # print('images at', label_i, 'is', self.images[label_i])
+                    # print('inner tags for label', label_i, 'is', innertags)
                     labels.append([self.images[label_i][0], innertags])
 
         # print(labels)

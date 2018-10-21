@@ -70,15 +70,14 @@ class Bot:
         self.browser.implicitly_wait(5)
         # select the field to type into it
         tweet_field = self.browser.find_element_by_id('tweet-box-home-timeline')
-        # tweet_field.click()
         self.sleep_range(3, 5)
         self.slow_send_keys(tweet_field, tweet_to_send)
         tweet_field.click()
         self.sleep_range(3, 5)
 
         # Click the tweet button
-        #tweet_button = self.browser.find_element_by_class_name('tweet-action.EdgeButton.EdgeButton--primary.js-tweet-btn')
-        #tweet_button.click()
+        tweet_button = self.browser.find_element_by_class_name('tweet-action.EdgeButton.EdgeButton--primary.js-tweet-btn')
+        tweet_button.click()
 
     def select_trending_topics(self):
         # Clear the trending list
@@ -100,6 +99,7 @@ class Bot:
         return int(round(time.time() * 1000))
 
     def scrape_tweets_on_page(self, time_to_scroll):
+        print("Scrolling tweets for 1 minute. Please be patient...")
         milli_start = self.current_time_millis()
         milli_current = self.current_time_millis()
         while milli_current - milli_start < time_to_scroll:
@@ -108,6 +108,7 @@ class Bot:
             milli_current = self.current_time_millis()
 
         # Scrape Tweets
+        print("Done scrolling. Scraping tweets...")
         self.tweets = self.browser.find_elements_by_class_name('TweetTextSize.js-tweet-text.tweet-text')
         regex = re.compile(r'[\n\r\t]');
         # Remove \n, \r, and \t from the tweets.
@@ -115,6 +116,7 @@ class Bot:
             self.formatted_tweets.append(regex.sub('', self.tweets[i].text))
 
         # Scrape Image Urls
+        print("Scraping images...")
         image_elements = self.browser.find_elements_by_class_name('AdaptiveMedia-photoContainer.js-adaptive-photo')
         for image in image_elements:
             self.image_urls.append(image.get_attribute('data-image-url'))
