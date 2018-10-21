@@ -76,7 +76,7 @@ def main():
         cache.add_images(bot.image_urls, selected_trend_text)
 
         # Google cloud services
-        print("Contacting google(tm) Cloud(r) services(sm)...")
+        print("Contacting Google Cloud Services...")
         notag_images = cache.get_notag_images(selected_trend_text)
         cache.add_image_tags(notag_images, selected_trend_text)
     else:
