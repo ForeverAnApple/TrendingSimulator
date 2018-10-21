@@ -10,6 +10,16 @@ Through clever web-scraping, TrendingSimulator will fetch the "Top Trending" fro
 defined region. It will take these trends, analyze and parse the related tweets using [markovify](https://github.com/jsvine/markovify)
 (the same as Subreddit Simulator), and create 140 character tweets with that information. 
 
+Demo: [@TrendingSimulator](https://twitter.com/TrendySimulator)
+
+[Demo Video](https://youtu.be/D4uYLhhTw9M)
+
+### Example Tweets
+
+![Messi oof](https://i.imgur.com/tR4e49I.png)
+
+![dogs dogs dogs](https://i.imgur.com/lyFRgX8.png)
+
 ## Installation
 
 ### Pre-requisites:
@@ -44,8 +54,7 @@ defined region. It will take these trends, analyze and parse the related tweets 
 ### Additional Information
 #### Scraping
 * Selenium creates a wrapper around the web browser. Normally used for unit testing, we are using it to scrape twitter.
-##### Headless Mode
-* By default, your browser should open and give a good demo on how the scraping and posting works. However, if the user wants to, it is possible to run purely in a commandline interface.
+![Selenium Scraping](https://i.imgur.com/BZMVZQa.gif)
 
 #### Caching
 * Looks like Selenium takes a while to scrape pages, to make this process more efficient. We will cache tweets 
@@ -59,15 +68,19 @@ pictures (16) in every request.
 
 * A(n) [sqlite](https://www.sqlite.org) database is used to store tweets, image information, and image tags information.
 
+![sqlite schema](https://i.imgur.com/mMV3sBx.png)
+SQLite Schema
+
+![sqlite sample data](https://i.imgur.com/BKn8IAq.png)
+Sample Tweet Data
+
 #### Image Labeling and Selection
 * Images will be labeled and tagged with Google Cloud Vision and loaded into the database.
 
 * During image selection phase, images will be matched to the tweet using the tags given to the images. The program will
 choose the most "relevant" image by seeing how well the tags match with the tweet itself.
 
-
-
-
+![image selections](https://i.imgur.com/WltAjXY.png)
 
 ### Created by:
 * [Alex Gittemeier](https://github.com/win93)
