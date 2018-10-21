@@ -45,6 +45,7 @@ def main():
 
         cache.add_tweets(bot.formatted_tweets, selected_trend_text)
         cache.add_images(bot.image_urls, selected_trend_text)
+        notag_images = cache.get_notag_images(selected_trend_text)
 
     # Grab tweets from cache and prep for markov ingestion
     all_text = ''

@@ -34,18 +34,16 @@ class TweetCache:
             tag TEXT NOT NULL)''')
         self.db.commit()
 
-    def google_tags(self, topic):
+    # Find all images that needs tagging
+    def get_notag_images(self, topic):
         cursor = self.db.cursor()
-        cursor.execute('''SELECT image_id, image_url 
-            FROM image, image_tag, topic
-            WHERE image.image_id = image_tag.image_id
-            AND image.topic_id = topic.topic_id
-            AND (SELECT count(*) FROM image_tag
-                WHERE image_tag.image_id=image.image.image_id) = 0
+        cursor.execute('''SELECT image.image_id, image.url
+            FROM image
+            JOIN topic ON image.topic_id = topic.topic_id
+            WHERE (SELECT COUNT(*) FROM image_tag WHERE image_tag.image_id = image.image_id) = 0
             AND topic_name = ?
         ''', (topic,))
-        for row in cursor:
-            print(row[0])
+        return cursor
 
     # returns cache age in seconds
     def cache_age(self, topic):
