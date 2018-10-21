@@ -10,10 +10,6 @@ Through clever web-scraping, TrendingSimulator will fetch the "Top Trending" fro
 defined region. It will take these trends, analyze and parse the related tweets using [markovify](https://github.com/jsvine/markovify)
 (the same as Subreddit Simulator), and create 140 character tweets with that information. 
 
-### Planned features:
-
-
-
 ## Installation
 
 ### Requisites:
@@ -27,8 +23,10 @@ defined region. It will take these trends, analyze and parse the related tweets 
 
 
 1. ```clone https://github.com/ForeverAnApple/TrendingSimulator/```
-1. Check the requirements.txt file.
-1. run the python script you dolt
+2. Check the requirements.txt file.
+3. Install all dependencies. 
+4. Run your perferred Selenium driver (Geckodriver/Chromedriver)
+5. Run main.py
 
 
 #### Created by:

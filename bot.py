@@ -79,7 +79,6 @@ class Bot:
         for x in range(len(trending_elements)):
             self.trending_dictionary[self.trending_elements_names[x]] = trending_elements[x]
 
-        # For now go ahead and click on the first option
         self.browser.implicitly_wait(10)
 
     @staticmethod

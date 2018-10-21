@@ -5,6 +5,7 @@ from tweetcache import TweetCache
 from bot import Bot
 from markov import Markov
 
+
 def main():
     cache = TweetCache()
     # vision = VisionApi()
@@ -30,20 +31,33 @@ def main():
     else:
         # the user is going to enter their own tag/user to scrape.
         selected_trend_text = input('Enter the tag you want to search for: ')
-        if selected_trend_text.startswith('@'):
-            bot.navigate('https://twitter.com/' + selected_trend_text[1:])
-        elif selected_trend_text.startswith('#'):
-            bot.navigate('https://twitter.com/search?q=%23' + selected_trend_text[1:] + '&src=tyah')
-        else:
-            bot.navigate('https://twitter.com/search?f=tweets&q=' + quote(selected_trend_text) + '&src=typd')
 
     # Load in new tweets if the cache misses
-    if cache.cache_age(selected_trend_text) > 30*60:  # 30 minutes
+    if cache.cache_age(selected_trend_text) > 30 * 60:  # 30 minutes
         if user_option == 0:
             bot.trending_dictionary[selected_trend].click()
+        else:
+            if selected_trend_text.startswith('@'):
+                bot.navigate('https://twitter.com/' + selected_trend_text[1:])
+            else:
+                if selected_trend_text.startswith('#'):
+                    bot.navigate('https://twitter.com/hashtag/' + selected_trend_text[1:])
+                else:
+                    bot.navigate('https://twitter.com/search?f=tweets&q=' + quote(selected_trend_text) + '&src=typd')
+
+        # If it isn't a users page click to get the newest posted items.
+        if not selected_trend_text.startswith('@'):
+            bot.browser.implicitly_wait(5)
+            latest_button = bot.browser.find_elements_by_class_name(
+                'AdaptiveFiltersBar-target.AdaptiveFiltersBar-target--link.js-nav.u-textUserColorHover')
+            # first one is top, 2nd is latest, 3rd people, 4th videos
+            bot.sleep_range(1, 3)
+            latest_button[1].click()
+            bot.sleep_range(5, 10)
+            bot.browser.implicitly_wait(5)
 
         bot.sleep_range(3, 7)
-        bot.scrape_tweets_on_page(15*1000)
+        bot.scrape_tweets_on_page(60 * 1000)
 
         cache.add_tweets(bot.formatted_tweets, selected_trend_text)
         cache.add_images(bot.image_urls, selected_trend_text)
