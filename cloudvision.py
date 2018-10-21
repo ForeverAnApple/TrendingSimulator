@@ -29,7 +29,7 @@ class VisionApi():
                 "features": [
                     {
                         "type": "LABEL_DETECTION",
-                        "maxResults": 3
+                        "maxResults": 10
                     }
                 ]
             })
@@ -37,6 +37,7 @@ class VisionApi():
         # HTTP POST the request with json body
         response = requests.post(self.DISCOVERY_URL, json=request)
         print(response.status_code, response.reason)
+        print(response.text)
         labels = []
         if response.status_code == 200:
             # Parse into json dictionary
@@ -67,7 +68,7 @@ class VisionApi():
 
 def main():
     images = ((2, 'https://i.imgur.com/BBcy6Wc.jpg'),
-              (1, 'https://www.petmd.com/sites/default/files/salmonella-infection-dogs.jpg'),
+              (1, 'https://pbs.twimg.com/media/Dp_AX3sUcAAI3Ws.jpg'),
               (0, 'https://media.gettyimages.com/photos/fish-shape-made-up-of-fish-picture-id182108931'),
               (3, 'https://i.imgur.com/PT3Nh7B.jpg'))
     testimgs = []
