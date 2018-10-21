@@ -55,7 +55,7 @@ and renew them every 30 minutes.
 * Also to save money, the API will send the least amount of requests neccesary to sending the maximum number of 
 pictures (16) in every request.
 
-* A [sqlite](https://www.sqlite.org) database is used to store tweets, image information, and image tags information.
+* A(n) [sqlite](https://www.sqlite.org) database is used to store tweets, image information, and image tags information.
 
 #### Image Labeling and Selection
 * Images will be labeled and tagged with Google Cloud Vision and loaded into the database.
