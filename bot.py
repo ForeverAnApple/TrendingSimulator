@@ -27,7 +27,7 @@ class Bot:
     def slow_send_keys(self, field, text):
         for c in text:
             field.send_keys(c)
-            self.sleep_range(0.03, 0.35)
+            self.sleep_range(0.01, 0.2)
 
     def login(self, username, password):
         # Navigate to the login page

@@ -41,8 +41,7 @@ class TweetCache:
             FROM image
             JOIN topic ON image.topic_id = topic.topic_id
             WHERE (SELECT COUNT(*) FROM image_tag WHERE image_tag.image_id = image.image_id) = 0
-            AND topic_name = ?
-        ''', (topic,))
+            AND topic_name = ?''', (topic,))
         return cursor
 
     def add_image_tags(self, images, topic):
@@ -79,6 +78,24 @@ class TweetCache:
                     VALUES (?,?)
                 ''', (image_tag[0], tag))
             self.db.commit()
+
+    def get_images_for_word(self, word):
+        cursor = self.db.cursor()
+        cursor.execute("""SELECT image.url
+            FROM image
+            JOIN image_tag ON image.image_id = image_tag.image_id
+            WHERE tag LIKE '%' + ? + '%'""", (word,))
+        for row in cursor:
+            yield row[0]
+
+    def get_images_for_topic(self, topic):
+        cursor = self.db.cursor()
+        cursor.execute('''SELECT image.url
+            FROM image
+            JOIN topic ON image.topic_id = topic.topic_id
+            WHERE topic.topic_name LIKE ?''', (topic,))
+        for row in cursor:
+            yield row[0]
 
     # returns cache age in seconds
     def cache_age(self, topic):
