@@ -39,7 +39,9 @@ def main():
 
     # Load in new tweets if the cache misses
     if cache.cache_age(selected_trend_text) > 30*60:  # 30 minutes
-        bot.trending_dictionary[selected_trend].click()
+        if user_option == 0:
+            bot.trending_dictionary[selected_trend].click()
+
         bot.sleep_range(3, 7)
         bot.scrape_tweets_on_page(60*1000)
 
@@ -61,7 +63,7 @@ def main():
     # Generate new tweets
     while True:
         tweet_generator = Markov(all_text)
-        suggested_tweets = [tweet_generator.build_tweet() for _ in range(5)]
+        suggested_tweets = [tweet_generator.build_tweet(selected_trend_text) for _ in range(5)]
         print("Suggested tweets:")
         for i, tweet in enumerate(suggested_tweets):
             print("  %d. %s" % (i + 1, tweet))
