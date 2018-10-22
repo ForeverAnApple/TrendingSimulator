@@ -7,3 +7,5 @@ __pycache__/
 key.json
 .idea/workspace.xml
 tmpImage.jpg
+.idea/TrendingSimulator.iml
+.idea/misc.xml
