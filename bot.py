@@ -39,11 +39,11 @@ class Bot:
         self.sleep_range(1, 3)
         # Click the username field
         username_field = self.browser.find_element_by_class_name('js-username-field')
-        self.slow_send_keys(username_field, username)
+        self.send_keys(username_field, username)
         self.sleep_range(1, 3)
         # Click the password field
         password_field = self.browser.find_element_by_class_name('js-password-field')
-        self.slow_send_keys(password_field, password)
+        self.send_keys(password_field, password)
         self.sleep_range(1, 3)
         # Click the Log in button
         login_button = self.browser.find_element_by_class_name('submit.EdgeButton.EdgeButton--primary.EdgeButtom--medium')
